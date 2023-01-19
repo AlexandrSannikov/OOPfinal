@@ -83,11 +83,15 @@ sudo dpkg -r mysql-connector-j
 
 sudo apt-get autoremove
 
+![screenshot](img/3-4-5.png)
+
 ### 5. Выложить историю команд в терминале ubuntu.
 
 Для получения истории введенных команд в терминале ubuntu используем:
 
 history
+
+![screenshot](img/all commands.png)
 
 
 
