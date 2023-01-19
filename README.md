@@ -75,7 +75,7 @@ wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-j_8.0.32-1u
 
 Устанавливаем пакет mysql-connector-j_8.0.32-1ubuntu22.04_all.deb:
 
-sudo dpkg - i ~/Загрузки/mysql-connector-j_8.0.32-1ubuntu22.04_all.deb
+sudo dpkg - i mysql-connector-j_8.0.32-1ubuntu22.04_all.deb
 
 Удаляем пакет и его сопутствующие пакеты:
 
@@ -91,7 +91,7 @@ sudo apt-get autoremove
 
 history
 
-![screenshot](img/all commands.png)
+![screenshot](img/all_commands.png)
 
 
 
