@@ -44,9 +44,5 @@ public class Animal {
                 ", dateOfBirth = '" + dateOfBirth + '\'' +
                 '}';
     }
-
-    public static void main(String[] args) {
-        System.out.println(new Animal("Der", "12.01.12"));
-    }
 }
 
