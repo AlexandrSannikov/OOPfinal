@@ -8,12 +8,12 @@ import java.util.ArrayList;
 public class AnimalDto {
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d");
     private int id;
-    private String  name,
-                    commands;
+    private String name,
+            commands;
     private AnimalEnum type;
     private Date date_of_birth;
 
-    public AnimalDto(int id, String name, String type, ArrayList commands, String date){
+    public AnimalDto(int id, String name, String type, ArrayList commands, String date) {
         setId(id);
         setName(name);
         setType(type);
@@ -21,12 +21,13 @@ public class AnimalDto {
         setDate_of_birth(date);
     }
 
-    public AnimalDto(String name, String type, ArrayList commands, String date){
+    public AnimalDto(String name, String type, ArrayList commands, String date) {
         setName(name);
         setType(type);
         setCommands(commands);
         setDate_of_birth(date);
     }
+
     public int getId() {
         return id;
     }
@@ -56,7 +57,7 @@ public class AnimalDto {
     }
 
     public void setType(String type) {
-        switch (type.toLowerCase()){
+        switch (type.toLowerCase()) {
             case ("cat"):
                 this.type = AnimalEnum.CAT;
                 break;
