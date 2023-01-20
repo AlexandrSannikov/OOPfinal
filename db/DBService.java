@@ -35,7 +35,7 @@ public class DBService {
              PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setString(1, animalDto.getName());
             pstmt.setString(2, String.valueOf(animalDto.getType()));
-            pstmt.setString(3, animalDto.getCommands());
+            pstmt.setString(3, animalDto.getCommands().toString());
             pstmt.setDate(4, animalDto.getDate_of_birth());
             pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -86,5 +86,32 @@ public class DBService {
             System.out.println(e.getMessage());
         }
         return null;
+    }
+
+    public void newCommand(int id, String command) throws SQLException, ClassNotFoundException {
+        AnimalDto animal = getAnimal(id);
+        animal.setCommands(command);
+        String sql = "UPDATE " + ConnectData.TABLE + " SET commands = ? WHERE animal_id = ?";
+        this.connect = connect();
+        try (Connection connection = this.connect;
+             PreparedStatement pstmt = connection.prepareStatement(sql)) {
+            pstmt.setString(1, animal.getCommands().toString());
+            pstmt.setInt(2, id);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void delAnimal(int id) throws SQLException, ClassNotFoundException {
+        String sql = "DELETE FROM " + ConnectData.TABLE + " WHERE animal_id = ?";
+        this.connect = connect();
+        try (Connection connection = this.connect;
+             PreparedStatement pstmt = connection.prepareStatement(sql)) {
+            pstmt.setInt(1, id);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

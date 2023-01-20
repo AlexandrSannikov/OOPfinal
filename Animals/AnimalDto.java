@@ -8,8 +8,8 @@ import java.util.ArrayList;
 public class AnimalDto {
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-M-d");
     private int id;
-    private String name,
-            commands;
+    private String name;
+    private ArrayList commands = new ArrayList<String>();
     private AnimalEnum type;
     private Date date_of_birth;
 
@@ -66,16 +66,17 @@ public class AnimalDto {
         this.name = name;
     }
 
-    public String getCommands() {
+    public ArrayList getCommands() {
         return commands;
     }
 
     public void setCommands(ArrayList commands) {
-        this.commands = commands.toString();
+        this.commands = commands;
     }
 
     public void setCommands(String commands) {
-        this.commands = commands;
+        commands = commands.replaceAll("[\\[\\]]", "");
+        this.commands.add(commands);
     }
 
     public AnimalEnum getType() {
