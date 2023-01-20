@@ -43,6 +43,13 @@ public class AnimalDto {
         setDate_of_birth(date);
     }
 
+    public AnimalDto(Animal animal, String type) {
+        setName(animal.getName());
+        setType(type);
+        setCommands(animal.getCommands());
+        setDate_of_birth(animal.getDateOfBirth());
+    }
+
     public int getId() {
         return id;
     }
