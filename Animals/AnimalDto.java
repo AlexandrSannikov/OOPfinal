@@ -21,7 +21,22 @@ public class AnimalDto {
         setDate_of_birth(date);
     }
 
+    public AnimalDto(int id, String name, String type, String commands, String date) {
+        setId(id);
+        setName(name);
+        setType(type);
+        setCommands(commands);
+        setDate_of_birth(date);
+    }
+
     public AnimalDto(String name, String type, ArrayList commands, String date) {
+        setName(name);
+        setType(type);
+        setCommands(commands);
+        setDate_of_birth(date);
+    }
+
+    public AnimalDto(String name, String type, String commands, String date) {
         setName(name);
         setType(type);
         setCommands(commands);
@@ -50,6 +65,10 @@ public class AnimalDto {
 
     public void setCommands(ArrayList commands) {
         this.commands = commands.toString();
+    }
+
+    public void setCommands(String commands) {
+        this.commands = commands;
     }
 
     public AnimalEnum getType() {
@@ -96,5 +115,16 @@ public class AnimalDto {
             e.printStackTrace();
             System.out.println("Not valid date of birth");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "AnimalDto {" +
+                "id = " + id +
+                ", name = '" + name + '\'' +
+                ", commands = '" + commands + '\'' +
+                ", type = " + type +
+                ", date_of_birth = " + date_of_birth +
+                '}';
     }
 }
